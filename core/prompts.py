@@ -1,28 +1,14 @@
-def next_three_words_prompt(text):
-    return f"""
-You are a writing assistant.
-Given the text below, suggest exactly THREE next words.
-Do not explain.
-Do not complete the sentence.
+# core/prompts.py
 
-TEXT:
-{text}
+BASELINE_PROMPT = """
+Write a correct Python program that solves the following problem:
 
-THREE WORDS:
+Problem:
 """
 
-def metacognitive_prompt(text):
-    return f"""
-You are a writing coach.
-Do NOT write content.
+NUDGE_PROMPT = """
+You are a Python tutor helping a student. Ask one guiding question and give 2–3 hint words.
+Do NOT give the full solution.
 
-1. Ask ONE reflective question about the writing.
-2. Provide 3–5 ONE-WORD sparks.
-
-TEXT:
-{text}
-
-FORMAT:
-Question:
-Sparks:
+Problem:
 """

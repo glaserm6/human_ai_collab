@@ -1,20 +1,11 @@
+# ui/nudge_ui.py
+
 import gradio as gr
-from core.prompts import metacognitive_prompt
-from core.constraints import format_nudge
 
-def build_nudge_ui(llm):
-    with gr.Column():
-        gr.Markdown("### 🧠 Reflective Writing Nudge")
-
-        text_input = gr.Textbox(lines=12, label="Your Writing")
-
-        btn = gr.Button("Get Nudge")
-
-        question = gr.Textbox(label="Reflective Question")
-        sparks = gr.Textbox(label="One-Word Sparks")
-
-        def run(text):
-            raw = llm.complete(metacognitive_prompt(text))
-            return format_nudge(raw)
-
-        btn.click(run, text_input, [question, sparks])
+def nudge_components():
+    code_box = gr.Code(label="Write Your Code")
+    nudge_btn = gr.Button("Nudge Me")
+    nudge_output = gr.Textbox(label="Nudge")
+    check_btn = gr.Button("Check Code")
+    result = gr.Textbox(label="Result")
+    return code_box, nudge_btn, nudge_output, check_btn, result

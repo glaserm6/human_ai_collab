@@ -1,11 +1,9 @@
-from .base import LLMClient
-import random
+# llm/mock.py
 
-class MockLLM(LLMClient):
-    def complete(self, prompt: str) -> str:
-        mock_responses = [
-            "in the margin",
-            "as a result",
-            "which suggests that"
-        ]
-        return random.choice(mock_responses)
+from .base import BaseModel  # relative import
+
+class MockModel(BaseModel):
+    def generate(self, prompt):
+        if "Problem:" in prompt:
+            return "print('This is a mock solution')"
+        return "Mock nudge: Think about loops."
