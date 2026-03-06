@@ -138,7 +138,7 @@ def launch_interface():
 
         survey_btn = gr.HTML(
             """
-            <a href="https://your-survey-link.com" target="_blank">
+            <a href="https://nku.co1.qualtrics.com/jfe6/preview/previewId/8b95e814-8d67-4e73-85d4-ce55dc2fd8a2/SV_5itu7fMR9GqAREi?Q_CHL=preview&Q_SurveyVersionID=current" target="_blank">
                 <button class="survey-button">
                     Continue to Post-Study Survey
                 </button>

@@ -7,7 +7,7 @@ def validate_code(user_code, phase):
         local_env = {}
 
         # Execute the user code safely
-        exec(user_code, {}, local_env)
+        exec(user_code, local_env)
 
         # -------------------------
         # PHASE 1
